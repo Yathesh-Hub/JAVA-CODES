@@ -1,0 +1,33 @@
+class Employee {
+    private String name;
+    private double salary;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public void setSalary(double salary) {
+        if (salary >= 0) {
+            this.salary = salary;
+        } else {
+            System.out.println("Salary cannot be negative.");
+        }
+    }
+    public double getSalary() {
+        return this.salary;
+    }
+}
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.setName("John Doe");
+        emp.setSalary(50000.0);
+        System.out.println("Employee Name: " + emp.getName());
+        System.out.println("Employee Salary: " + emp.getSalary());
+        emp.setSalary(-10000.0);
+    }
+}
